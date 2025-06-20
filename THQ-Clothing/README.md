@@ -1,3 +1,58 @@
+# THQ Clothing Project
+
+Đây là dự án website bán quần áo thời trang nam THQ Clothing, được xây dựng trên nền tảng Laravel.
+
+## Hướng dẫn cài đặt và chạy dự án
+
+Để chạy dự án trên máy của bạn, hãy làm theo các bước sau:
+
+### 1. Clone a Repository
+Mở terminal và chạy lệnh sau để clone a repository về máy:
+```bash
+git clone https://github.com/your-username/thq-clothing.git
+cd thq-clothing
+```
+*(Thay `your-username/thq-clothing.git` bằng URL a repository của bạn)*
+
+### 2. Cài đặt Dependencies
+Cài đặt các gói PHP và JavaScript cần thiết:
+```bash
+composer install
+npm install
+```
+
+### 3. Thiết lập Môi trường
+Sao chép file cấu hình môi trường và tạo khóa ứng dụng:
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+Tiếp theo, mở file `.env` và cấu hình các thông tin cần thiết, đặc biệt là kết nối cơ sở dữ liệu (DB_DATABASE, DB_USERNAME, DB_PASSWORD).
+
+### 4. Cấu hình Cơ sở dữ liệu
+Chạy lệnh sau để tạo các bảng trong cơ sở dữ liệu:
+```bash
+php artisan migrate
+```
+Nếu bạn muốn có dữ liệu mẫu, hãy chạy thêm:
+```bash
+php artisan db:seed
+```
+
+### 5. Chạy Dự án
+Mở hai cửa sổ terminal riêng biệt:
+- **Cửa sổ 1:** Chạy Vite để biên dịch assets (CSS, JS):
+  ```bash
+  npm run dev
+  ```
+- **Cửa sổ 2:** Chạy server Laravel:
+  ```bash
+  php artisan serve
+  ```
+Sau đó, truy cập vào địa chỉ `http://localhost:8000` trên trình duyệt để xem trang web.
+
+---
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
