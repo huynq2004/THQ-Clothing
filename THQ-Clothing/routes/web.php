@@ -58,3 +58,20 @@ Route::get('/contact', function () {
 Route::get('/products/category/{category}', function ($category) {
     return view('categories.show', compact('category'));
 })->name('products.category');
+
+// Admin Routes
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', function () {
+        return view('admin.home');
+    })->name('home');
+    Route::get('/products', function () {
+        return view('admin.products.index');
+    })->name('products.index');
+    Route::get('/orders', function () {
+        return view('admin.orders.index');
+    })->name('orders.index');
+    Route::get('/discounts', function () {
+        return view('admin.discounts.index');
+    })->name('discounts.index');
+    // Thêm các route khác cho admin ở đây sau
+});

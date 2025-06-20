@@ -40,15 +40,15 @@
                     
                     <!-- Auth & Support -->
                     <div class="hidden md:flex items-center space-x-12 text-sm uppercase tracking-wider">
-                        @auth
+                        @guest
+                             <a href="{{ request()->is('admin*') ? route('home') : route('admin.home') }}" class="text-black hover:text-gray-600">ĐĂNG NHẬP</a>
+                        @else
                             <span class="text-black">{{ Auth::user()->name }}</span>
                             <form method="POST" action="{{ route('logout') }}" class="inline">
                                 @csrf
                                 <button type="submit" class="text-black hover:text-gray-600">ĐĂNG XUẤT</button>
                             </form>
-                        @else
-                            <a href="{{ route('login') }}" class="text-black hover:text-gray-600">ĐĂNG NHẬP</a>
-                        @endauth
+                        @endguest
                         <a href="#" class="text-black hover:text-gray-600">HỖ TRỢ</a>
                     </div>
                     
@@ -157,18 +157,28 @@
                     </button>
                 </div>
                 <nav class="space-y-4 text-sm uppercase tracking-wide">
-                    <a href="{{ route('products.index') }}" class="block py-2 text-black">TẤT CẢ</a>
-                    <a href="{{ route('products.category', 'ao-so-mi') }}" class="block py-2 text-black">ÁO SƠ MI</a>
-                    <a href="{{ route('products.category', 'ao-phong') }}" class="block py-2 text-black">ÁO PHÔNG</a>
-                    <a href="{{ route('products.category', 'quan-dai') }}" class="block py-2 text-black">QUẦN DÀI</a>
-                    <a href="{{ route('products.category', 'quan-jeans') }}" class="block py-2 text-black">QUẦN JEANS</a>
-                    <a href="{{ route('products.category', 'quan-dui') }}" class="block py-2 text-black">QUẦN ĐÙI</a>
-                    <hr class="my-4">
-                    @guest
-                        <a href="{{ route('login') }}" class="block py-2 text-black">ĐĂNG NHẬP</a>
-                    @endguest
-                    <a href="#" class="block py-2 text-black">HỖ TRỢ</a>
-                    <a href="{{ route('cart.index') }}" class="block py-2 text-black">GIỎ HÀNG</a>
+                    @if(request()->is('admin*'))
+                        {{-- Admin Mobile Menu --}}
+                        <a href="{{ route('admin.home') }}" class="block py-2 text-black">TRANG CHỦ</a>
+                        <a href="{{ route('admin.products.index') }}" class="block py-2 text-black">QUẢN LÝ SẢN PHẨM</a>
+                        <a href="{{ route('admin.orders.index') }}" class="block py-2 text-black">QUẢN LÝ HÓA ĐƠN</a>
+                        <a href="{{ route('admin.discounts.index') }}" class="block py-2 text-black">QUẢN LÝ KHUYẾN MẠI</a>
+                        
+                    @else
+                        {{-- Customer Mobile Menu --}}
+                        <a href="{{ route('products.index') }}" class="block py-2 text-black">TẤT CẢ</a>
+                        <a href="{{ route('categories.show', 'ao-so-mi') }}" class="block py-2 text-black">ÁO SƠ MI</a>
+                        <a href="{{ route('categories.show', 'ao-phong') }}" class="block py-2 text-black">ÁO PHÔNG</a>
+                        <a href="{{ route('categories.show', 'quan-dai') }}" class="block py-2 text-black">QUẦN DÀI</a>
+                        <a href="{{ route('categories.show', 'quan-jeans') }}" class="block py-2 text-black">QUẦN JEANS</a>
+                        <a href="{{ route('categories.show', 'quan-dui') }}" class="block py-2 text-black">QUẦN ĐÙI</a>
+                        <hr class="my-4">
+                        @guest
+                            <a href="{{ route('admin.home') }}" class="block py-2 text-black">ĐĂNG NHẬP</a>
+                        @endguest
+                        <a href="#" class="block py-2 text-black">HỖ TRỢ</a>
+                        <a href="{{ route('cart.index') }}" class="block py-2 text-black">GIỎ HÀNG</a>
+                    @endif
                 </nav>
             </div>
         </div>
