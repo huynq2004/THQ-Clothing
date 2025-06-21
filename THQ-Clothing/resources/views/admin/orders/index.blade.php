@@ -31,8 +31,14 @@
         min-width: 100px;
     }
 
+    .all-button {
+        background-color: #fff; /* Màu trắng cho nút Tất cả */
+        color: #000; /* Màu chữ đen để tương phản */
+    }
+
     .order-section {
         padding: 10px 20px;
+        width: 100%; /* Đảm bảo chiếm toàn bộ chiều rộng */
     }
 
     .order-header,
@@ -41,6 +47,7 @@
         grid-template-columns: 80px 2fr 1fr 1fr 1.5fr;
         align-items: center;
         padding: 10px 0;
+        grid-gap: 5px; /* Thêm khoảng cách giữa các cột để dễ kiểm soát */
     }
 
     .order-header {
@@ -54,6 +61,14 @@
         border-bottom: 1px solid #e0e0e0;
     }
 
+    .order-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
     .order-image img {
         width: 60px;
         height: 60px;
@@ -63,17 +78,24 @@
 
     .order-details {
         padding-left: 10px;
+        text-align: left;
+        overflow: hidden; /* Ngăn tràn nội dung */
+        white-space: nowrap; /* Ngăn xuống dòng */
     }
 
     .order-price,
     .order-status {
         text-align: center;
+        overflow: hidden;
+        white-space: nowrap;
     }
 
     .action-buttons {
         display: flex;
         justify-content: center;
         gap: 10px;
+        width: 100%;
+        padding: 0; /* Loại bỏ padding không cần thiết */
     }
 
     .action-button {
@@ -84,6 +106,8 @@
         cursor: pointer;
         border-radius: 4px;
         font-size: 14px;
+        min-width: 80px; /* Đảm bảo nút có kích thước nhất quán */
+        text-align: center;
     }
 
     @media (max-width: 768px) {
@@ -93,15 +117,21 @@
             font-size: 14px;
         }
 
+        .order-image img {
+            width: 50px;
+            height: 50px;
+        }
+
         .action-button {
             padding: 4px 8px;
             font-size: 12px;
+            min-width: 70px;
         }
     }
 </style>
 
 <div class="buttons-container">
-    <div class="button">Tất cả</div>
+    <div class="button all-button">Tất cả</div>
     <div class="button">Chưa xử lý</div>
     <div class="button">Đang xử lý</div>
     <div class="button">Đã đóng gói</div>
@@ -112,12 +142,13 @@
 
 <div class="order-section">
     <div class="order-header">
-        <div>Ảnh</div>
-        <div>Sản phẩm</div>
-        <div>Tổng</div>
-        <div>Trạng thái</div>
-        <div>Thao tác</div>
+        <div class="text-center">Sản phẩm</div>
+        <div class="text-left pl-2"></div>
+        <div class="text-center">Tổng đơn hàng</div>
+        <div class="text-center">Trạng thái</div>
+        <div class="text-center">Thao tác</div>
     </div>
+    
 
     <div class="order-content">
         <div class="order-image">
