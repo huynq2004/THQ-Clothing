@@ -1,9 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Product;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\CategoryController;
 
 Route::get('/', function () {
-    return view('home');
+    $products = Product::with('category')->where('is_active', true)->get();
+    return view('home', compact('products'));
 })->name('home');
 
 Route::get('/search', function () {
@@ -74,14 +78,20 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/', function () {
         return view('admin.home');
     })->name('home');
-    Route::get('/products', function () {
-        return view('admin.products.index');
-    })->name('products.index');
+    
+    // Products Management - Sử dụng Resource Controller
+    Route::resource('products', ProductController::class);
+    
+    // Orders Management
     Route::get('/orders', function () {
         return view('admin.orders.index');
     })->name('orders.index');
+    
+    // Discounts Management
     Route::get('/discounts', function () {
         return view('admin.discounts.index');
     })->name('discounts.index');
-    // Thêm các route khác cho admin ở đây sau
+
+    // Category Management
+    Route::resource('categories', CategoryController::class)->only(['index', 'store', 'destroy']);
 });
