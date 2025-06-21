@@ -3,66 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông Báo - Thêm Thành Công</title>
     <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
         .modal {
-            width: 400px;
-            margin: 100px auto;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            font-family: Arial, sans-serif;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
             position: relative;
         }
         .modal-header {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            font-weight: 300;
+            cursor: pointer;
+            text-decoration: none;
+            color: #aaa;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
             text-align: center;
-            font-weight: bold;
-            padding: 10px;
-            border-bottom: 1px solid #ccc;
         }
         .modal-body {
             display: flex;
             align-items: center;
-            padding: 20px;
-        }
-        .modal-body img {
-            margin-right: 10px;
-        }
-        .modal-body span {
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
             font-size: 16px;
         }
-        .modal-footer {
-            text-align: right;
-            padding: 10px 20px;
-        }
-        .modal-footer button {
-            padding: 8px 16px;
-            background-color: black;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .modal-close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
+        .success-icon {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e8f5e9;
+            border-radius: 50%;
+            color: #4caf50;
             font-size: 18px;
+            font-weight: bold;
+        }
+        .modal-footer {
+            display: flex;
+            justify-content: center;
+        }
+        .btn-primary {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 40px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
             cursor: pointer;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
     <div class="modal">
-        <div class="modal-close">&times;</div>
+        <a href="{{ route('admin.products.index') }}" class="close-button">&times;</a>
         <div class="modal-header">
             THÔNG BÁO
         </div>
         <div class="modal-body">
-            <img src="https://via.placeholder.com/20/00ff00/ffffff?text=%E2%9C%93" alt="Check">
+            <div class="success-icon">&#10003;</div>
             <span>Thêm sản phẩm thành công</span>
         </div>
         <div class="modal-footer">
-            <button>OK</button>
+            <a href="{{ route('admin.products.index') }}" class="btn-primary">OK</a>
         </div>
     </div>
 </body>

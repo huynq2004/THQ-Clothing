@@ -3,81 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thông Báo</title>
+    <title>Thông Báo - Xóa Thành Công</title>
     <style>
-        .modal {
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin: 0;
             display: flex;
-            justify-content: center;
             align-items: center;
-            width: 400px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-            padding: 20px;
-            font-family: Arial, sans-serif;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .modal {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
             position: relative;
         }
-
         .modal-header {
+            font-size: 22px;
             font-weight: 600;
-            font-size: 20px;
-            text-align: center;
-            width: 100%;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
         }
-
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            font-weight: 300;
+            cursor: pointer;
+            text-decoration: none;
+            color: #aaa;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
         .modal-body {
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
             font-size: 16px;
-            margin-bottom: 15px;
         }
-
+        .success-icon {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e8f5e9;
+            border-radius: 50%;
+            color: #4caf50;
+            font-size: 18px;
+            font-weight: bold;
+        }
         .modal-footer {
             display: flex;
             justify-content: center;
         }
-
-        .checkbox {
-            display: inline-flex;
-            margin-right: 10px;
-        }
-
-        .button {
-            border: none;
+        .btn-primary {
             background-color: #000;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
+            color: #fff;
+            padding: 10px 40px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
             cursor: pointer;
-            box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
-        }
-
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 18px;
-            cursor: pointer;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
-
     <div class="modal">
-        <div class="close">X</div>
-        <div class="modal-header">THÔNG BÁO</div>
+        <a href="{{ route('admin.products.index') }}" class="close-button">&times;</a>
+        <div class="modal-header">
+            THÔNG BÁO
+        </div>
         <div class="modal-body">
-            <div class="checkbox">
-                <img src="https://img.icons8.com/ios-filled/50/000000/checkmark--v2.png" alt="checkbox" width="24">
-            </div>
-            Xóa sản phẩm thành công
+            <div class="success-icon">&#10003;</div>
+            <span>Xóa sản phẩm thành công</span>
         </div>
         <div class="modal-footer">
-            <button class="button">OK</button>
+            <a href="{{ route('admin.products.index') }}" class="btn-primary">OK</a>
         </div>
     </div>
-
 </body>
 </html>
