@@ -15,15 +15,15 @@
                 <div class="space-y-4">
                     <div class="flex">
                         <label class="text-sm font-medium w-20">Họ tên:</label>
-                        <div class="text-sm flex-1">Nguyễn Văn A</div>
+                        <div id="confirmFullName" class="text-sm flex-1">-</div>
                     </div>
                     <div class="flex">
                         <label class="text-sm font-medium w-20">SĐT:</label>
-                        <div class="text-sm flex-1">0123456789</div>
+                        <div id="confirmPhone" class="text-sm flex-1">-</div>
                     </div>
                     <div class="flex">
                         <label class="text-sm font-medium w-20">Email:</label>
-                        <div class="text-sm flex-1">vananguyen@example.com</div>
+                        <div id="confirmEmail" class="text-sm flex-1">-</div>
                     </div>
                 </div>
                 
@@ -31,15 +31,15 @@
                 <div class="space-y-4">
                     <div class="flex">
                         <label class="text-sm font-medium w-32">Quận:</label>
-                        <div class="bg-gray-200 px-3 py-1 text-sm flex-1">Thanh Xuân</div>
+                        <div id="confirmDistrict" class="bg-gray-200 px-3 py-1 text-sm flex-1">-</div>
                     </div>
                     <div class="flex">
                         <label class="text-sm font-medium w-32">Tỉnh/Thành phố:</label>
-                        <div class="bg-gray-200 px-3 py-1 text-sm flex-1">Hà Nội</div>
+                        <div id="confirmCity" class="bg-gray-200 px-3 py-1 text-sm flex-1">-</div>
                     </div>
                     <div class="flex">
                         <label class="text-sm font-medium w-32">Địa chỉ cụ thể:</label>
-                        <div class="text-sm flex-1">Bùi Xương Trạch</div>
+                        <div id="confirmAddress" class="text-sm flex-1">-</div>
                     </div>
                 </div>
             </div>
@@ -65,20 +65,84 @@
     <div class="bg-gray-100 px-6 py-6" style="background-color: #F7F7F7;">
         <div class="flex items-center justify-between">
             <div class="flex items-center space-x-8">
-                <button class="text-sm uppercase tracking-wider underline">QUAY LẠI</button>
+                <button id="backButton" class="text-sm uppercase tracking-wider underline hover:no-underline">QUAY LẠI</button>
                 <div class="flex items-center space-x-4">
                     <label class="text-sm uppercase tracking-wider">MÃ KHUYẾN MẠI:</label>
-                    <input type="text" value="SUMMER10" class="border border-gray-300 px-3 py-2 text-sm w-32">
+                    <input type="text" id="confirmCouponCode" value="" class="border border-gray-300 px-3 py-2 text-sm w-32" readonly>
                 </div>
             </div>
             <div class="flex items-center space-x-6">
                 <span class="text-sm uppercase tracking-wider">TỔNG:</span>
-                <span class="text-lg">700.000 VND</span>
-                <a href="{{ route('checkout.success') }}" class="bg-black text-white px-8 py-3 text-sm uppercase tracking-wider hover:bg-gray-800 transition-colors">
+                <span id="confirmTotal" class="text-lg">749.000 VND</span>
+                <button id="confirmButton" class="bg-black text-white px-8 py-3 text-sm uppercase tracking-wider hover:bg-gray-800 transition-colors">
                     XÁC NHẬN
-                </a>
+                </button>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const backButton = document.getElementById('backButton');
+    const confirmButton = document.getElementById('confirmButton');
+    
+    // Load form data from sessionStorage
+    const formData = JSON.parse(sessionStorage.getItem('checkoutFormData') || '{}');
+    
+    // Populate confirmation fields
+    if (formData.fullName) {
+        document.getElementById('confirmFullName').textContent = formData.fullName;
+    }
+    if (formData.phone) {
+        document.getElementById('confirmPhone').textContent = formData.phone;
+    }
+    if (formData.email) {
+        document.getElementById('confirmEmail').textContent = formData.email;
+    }
+    if (formData.district) {
+        const districtMap = {
+            'quan-1': 'Quận 1',
+            'quan-2': 'Quận 2',
+            'quan-3': 'Quận 3'
+        };
+        document.getElementById('confirmDistrict').textContent = districtMap[formData.district] || formData.district;
+    }
+    if (formData.city) {
+        const cityMap = {
+            'ho-chi-minh': 'TP. Hồ Chí Minh',
+            'ha-noi': 'Hà Nội',
+            'da-nang': 'Đà Nẵng'
+        };
+        document.getElementById('confirmCity').textContent = cityMap[formData.city] || formData.city;
+    }
+    if (formData.address) {
+        document.getElementById('confirmAddress').textContent = formData.address;
+    }
+    
+    // Handle coupon code
+    if (formData.couponCode) {
+        document.getElementById('confirmCouponCode').value = formData.couponCode;
+    }
+    
+    // Handle total amount
+    let totalAmount = 749000;
+    if (formData.discountApplied && formData.discountAmount) {
+        totalAmount = totalAmount - formData.discountAmount;
+        document.getElementById('confirmTotal').textContent = `${totalAmount.toLocaleString()} VND`;
+        document.getElementById('confirmTotal').className = 'text-lg text-red-600 font-semibold';
+    }
+    
+    // Back button functionality
+    backButton.addEventListener('click', function() {
+        window.history.back();
+    });
+    
+    // Confirm button functionality
+    confirmButton.addEventListener('click', function() {
+        // Redirect to success page
+        window.location.href = '{{ route("checkout.success") }}';
+    });
+});
+</script>
 @endsection

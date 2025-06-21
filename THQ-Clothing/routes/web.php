@@ -22,6 +22,11 @@ Route::get('/cart', function () {
     return view('cart.index');
 })->name('cart.index');
 
+// Checkout Routes
+Route::get('/checkout', function () {
+    return view('checkout.index');
+})->name('checkout.index');
+
 Route::get('/checkout/shipping', function () {
     return view('checkout.shipping');
 })->name('checkout.shipping');
@@ -33,6 +38,11 @@ Route::get('/checkout/confirm', function () {
 Route::get('/checkout/success', function () {
     return view('checkout.success');
 })->name('checkout.success');
+
+Route::post('/checkout/process', function () {
+    // Process checkout logic here
+    return redirect()->route('checkout.success');
+})->name('checkout.process');
 
 Route::get('/orders/track', function () {
     return view('orders.track');

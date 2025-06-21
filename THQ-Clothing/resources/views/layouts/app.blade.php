@@ -4,30 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'THQ Clothing')</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-white">
-    <!-- Header -->
+    {{-- Header --}}
     <header class="bg-white -mt-4">
         <div class="px-4 md:px-8">
-            <!-- Main Header -->
+            {{-- Main Header --}}
             <div class="flex items-center justify-between">
-                <!-- Mobile Menu & Logo -->
+                {{-- Mobile Menu & Logo --}}
                 <div class="flex items-center space-x-4">
-                    <!-- Mobile Menu Toggle -->
+                    {{-- Mobile Menu Toggle --}}
                     <button class="flex flex-col space-y-1" id="mobile-menu-toggle">
                         <img src="{{ asset('assets/icons/customer/sidebar icon.svg') }}" alt="Menu" class="w-[47.5px] h-[115px]">
                     </button>
                     
-                    <!-- Logo -->
+                    {{-- Logo --}}
                     <a href="{{ route('home') }}" class="text-[100px] font-bold text-black">
                         THQ
                     </a>
                 </div>
                 
-                <!-- Header Right -->
+                {{-- Header Right --}}
                 <div class="flex items-center space-x-12">
-                    <!-- Search -->
+                    {{-- Search --}}
                     <div class="hidden md:block">
                         <form class="relative" action="{{ route('search') }}" method="GET">
                             <input type="text" name="q" placeholder="TÌM KIẾM" 
@@ -36,7 +37,7 @@
                         </form>
                     </div>
                     
-                    <!-- Auth & Support -->
+                    {{-- Auth & Support --}}
                     <div class="hidden md:flex items-center space-x-12 text-sm uppercase tracking-wider">
                         @guest
                              <a href="{{ request()->is('admin*') ? route('home') : route('admin.home') }}" class="text-black hover:text-gray-600">ĐĂNG NHẬP</a>
@@ -50,14 +51,14 @@
                         <a href="#" class="text-black hover:text-gray-600">HỖ TRỢ</a>
                     </div>
                     
-                    <!-- Cart -->
+                    {{-- Cart --}}
                     <a href="{{ route('cart.index') }}" class="text-black hover:text-gray-600 text-sm uppercase tracking-wider {{ request()->routeIs('cart.index') ? 'font-bold' : '' }}">
                         GIỎ [{{ session('cart') ? count(session('cart')) : 1 }}]
                     </a>
                 </div>
             </div>
             
-            <!-- Category Navigation - Only show on home and category pages -->
+            {{-- Category Navigation - Only show on home and category pages --}}
             @if(!request()->routeIs(['cart.index', 'checkout.*', 'orders.*', 'products.show']))
             <nav class="py-4">
                 <div class="flex items-center justify-between">
@@ -83,17 +84,17 @@
         </div>
     </header>
 
-    <!-- Main Content -->
+    {{-- Main Content --}}
     <main>
         @yield('content')
     </main>
 
-    <!-- Footer - Only show on home and category pages -->
+    {{-- Footer - Only show on home and category pages --}}
     @if(!request()->routeIs(['cart.index', 'checkout.*', 'orders.*', 'products.show']))
     <footer class="bg-gray-900 text-white mt-16">
         <div class="px-2 md:px-4 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Company Info -->
+                {{-- Company Info --}}
                 <div>
                     <h3 class="text-xl font-bold mb-4">THQ Clothing</h3>
                     <p class="text-gray-300 mb-4">Thời trang nam cao cấp, phong cách và chất lượng hàng đầu Việt Nam.</p>
@@ -104,7 +105,7 @@
                     </div>
                 </div>
                 
-                <!-- Quick Links -->
+                {{-- Quick Links --}}
                 <div>
                     <h4 class="font-semibold mb-4">Liên kết nhanh</h4>
                     <ul class="space-y-2 text-gray-300">
@@ -115,7 +116,7 @@
                     </ul>
                 </div>
                 
-                <!-- Customer Service -->
+                {{-- Customer Service --}}
                 <div>
                     <h4 class="font-semibold mb-4">Hỗ trợ khách hàng</h4>
                     <ul class="space-y-2 text-gray-300">
@@ -126,7 +127,7 @@
                     </ul>
                 </div>
                 
-                <!-- Contact Info -->
+                {{-- Contact Info --}}
                 <div>
                     <h4 class="font-semibold mb-4">Thông tin liên hệ</h4>
                     <div class="space-y-2 text-gray-300">
@@ -144,7 +145,7 @@
     </footer>
     @endif
 
-    <!-- Mobile Menu -->
+    {{-- Mobile Menu --}}
     <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
         <div class="fixed left-0 top-0 h-full w-80 bg-white shadow-lg">
             <div class="p-4">

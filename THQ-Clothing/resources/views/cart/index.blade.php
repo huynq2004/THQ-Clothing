@@ -34,7 +34,7 @@
     
     <!-- Bottom Section -->
     <div class="bg-gray-100 px-4 md:px-6 py-4 md:py-6" style="background-color: #F7F7F7;">
-        <div class="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0 sm:space-x-6">
+        <div class="flex flex-col sm:flex-row items-center justify-end space-y-4 sm:space-y-0 sm:space-x-6">
             <div class="flex items-center space-x-4 sm:space-x-6">
                 <span class="text-sm uppercase tracking-wider">TỔNG:</span>
                 <span class="text-lg">749.000 VND</span>
