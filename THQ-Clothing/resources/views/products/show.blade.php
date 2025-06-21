@@ -9,7 +9,7 @@
             <!-- Product Image -->
             <div class="flex justify-center">
                 <div class="bg-gray-100 flex items-center justify-center w-full max-w-md aspect-[16/9] md:aspect-auto" style="md:width: 450px; md:height: 260px;">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-xp9085iAybu09bsVDDtLmEmUOqaCqz.png" alt="Áo sơ mi trắng THQ Cotton" 
+                    <img src="{{ asset('assets/images/customer/category/1.jpg') }}" alt="Áo sơ mi trắng THQ Cotton" 
                          class="max-w-full max-h-full object-contain">
                 </div>
             </div>

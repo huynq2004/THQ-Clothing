@@ -47,7 +47,7 @@
             <!-- Product -->
             <div class="mb-12">
                 <div class="bg-gray-100 w-32 aspect-[3/4] mb-4">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-4mSdhe0IqxVWQwungvGU6ggkPAL4DY.png" alt="Áo sơ mi THQ trắng cotton" 
+                    <img src="{{ asset('assets/images/customer/category/1.jpg') }}" alt="Áo sơ mi THQ trắng cotton" 
                          class="w-full h-full object-cover">
                 </div>
                 <div class="w-32">

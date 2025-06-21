@@ -9,7 +9,7 @@
         <div class="max-w-sm mx-auto md:mx-0">
             <!-- Product Image -->
             <div class="bg-gray-100 mb-4 md:mb-6 overflow-hidden w-full max-w-xs mx-auto" style="aspect-ratio: 3/4;">
-                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-RpkM4v9vCFTdYJnGVFQZA8fqdJSLpb.png" alt="Áo sơ mi THQ trắng cotton" 
+                <img src="{{ asset('assets/images/customer/category/1.jpg') }}" alt="Áo sơ mi THQ trắng cotton" 
                      class="w-full h-full object-cover">
             </div>
             

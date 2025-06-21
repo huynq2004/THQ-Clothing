@@ -8,21 +8,19 @@
 </head>
 <body class="bg-white">
     <!-- Header -->
-    <header class="bg-white">
+    <header class="bg-white -mt-4">
         <div class="px-4 md:px-8">
             <!-- Main Header -->
-            <div class="flex items-center justify-between py-6">
+            <div class="flex items-center justify-between">
                 <!-- Mobile Menu & Logo -->
                 <div class="flex items-center space-x-4">
                     <!-- Mobile Menu Toggle -->
                     <button class="flex flex-col space-y-1" id="mobile-menu-toggle">
-                        <div class="w-6 h-0.5 bg-black"></div>
-                        <div class="w-6 h-0.5 bg-black"></div>
-                        <div class="w-6 h-0.5 bg-black"></div>
+                        <img src="{{ asset('assets/icons/customer/sidebar icon.svg') }}" alt="Menu" class="w-[47.5px] h-[115px]">
                     </button>
                     
                     <!-- Logo -->
-                    <a href="{{ route('home') }}" class="text-5xl font-bold text-black">
+                    <a href="{{ route('home') }}" class="text-[100px] font-bold text-black">
                         THQ
                     </a>
                 </div>
@@ -33,7 +31,7 @@
                     <div class="hidden md:block">
                         <form class="relative" action="{{ route('search') }}" method="GET">
                             <input type="text" name="q" placeholder="TÌM KIẾM" 
-                                   class="border-b border-black bg-transparent pb-2 text-sm uppercase tracking-wider focus:outline-none w-40"
+                                   class="border-b border-black bg-transparent pb-2 text-sm uppercase tracking-wider focus:outline-none w-40 cursor-pointer"
                                    onclick="window.location.href='{{ route('search') }}'">
                         </form>
                     </div>
@@ -76,7 +74,7 @@
                         <span class="text-black">TRANG 1 2</span>
                         <span class="text-black">BỘ LỌC</span>
                         <button class="text-black">
-                            <i class="fas fa-filter"></i>
+                            <img src="{{ asset('assets/icons/customer/filter.svg') }}" alt="Filter" class="w-4 h-4">
                         </button>
                     </div>
                 </div>
