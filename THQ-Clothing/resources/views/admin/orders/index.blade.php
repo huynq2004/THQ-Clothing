@@ -31,6 +31,11 @@
         min-width: 100px;
     }
 
+    .all-button {
+        background-color: #fff; /* Màu trắng cho nút Tất cả */
+        color: #000; /* Màu chữ đen để tương phản */
+    }
+
     .order-section {
         padding: 10px 20px;
         width: 100%; /* Đảm bảo chiếm toàn bộ chiều rộng */
@@ -126,7 +131,7 @@
 </style>
 
 <div class="buttons-container">
-    <div class="button">Tất cả</div>
+    <div class="button all-button">Tất cả</div>
     <div class="button">Chưa xử lý</div>
     <div class="button">Đang xử lý</div>
     <div class="button">Đã đóng gói</div>
@@ -137,12 +142,13 @@
 
 <div class="order-section">
     <div class="order-header">
-        <div class="text-center">Ảnh</div>
-        <div class="text-left pl-2">Sản phẩm</div>
-        <div class="text-center">Tổng</div>
+        <div class="text-center">Sản phẩm</div>
+        <div class="text-left pl-2"></div>
+        <div class="text-center">Tổng đơn hàng</div>
         <div class="text-center">Trạng thái</div>
         <div class="text-center">Thao tác</div>
     </div>
+    
 
     <div class="order-content">
         <div class="order-image">
