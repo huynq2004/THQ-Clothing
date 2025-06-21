@@ -73,7 +73,7 @@
                 <!-- Suggestion Products -->
                 <div class="group cursor-pointer">
                     <div class="bg-gray-100 aspect-[3/4] mb-3 overflow-hidden">
-                        <img src="/images/ao-polo-tay-dai.jpg" alt="ÁO POLO TAY DÀI 2025" 
+                        <img src="{{ asset('assets/images/search/1.jpg') }}" alt="ÁO POLO TAY DÀI 2025" 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
                     <div>
@@ -84,7 +84,7 @@
                 
                 <div class="group cursor-pointer">
                     <div class="bg-gray-100 aspect-[3/4] mb-3 overflow-hidden">
-                        <img src="/images/ao-polo-tay-ngan.jpg" alt="ÁO POLO TAY NGẮN C..." 
+                        <img src="{{ asset('assets/images/search/2.jpg') }}" alt="ÁO POLO TAY NGẮN C..." 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
                     <div>
@@ -95,7 +95,7 @@
                 
                 <div class="group cursor-pointer">
                     <div class="bg-gray-100 aspect-[3/4] mb-3 overflow-hidden">
-                        <img src="/images/ao-phong-cotton.jpg" alt="ÁO PHÔNG COTTON 2..." 
+                        <img src="{{ asset('assets/images/search/3.jpg') }}" alt="ÁO PHÔNG COTTON 2..." 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
                     <div>
@@ -106,7 +106,7 @@
                 
                 <div class="group cursor-pointer">
                     <div class="bg-gray-100 aspect-[3/4] mb-3 overflow-hidden">
-                        <img src="/images/tui-dung-do.jpg" alt="TÚI ĐỰNG ĐỒ CÁ NHÂ..." 
+                        <img src="{{ asset('assets/images/search/4.jpg') }}" alt="TÚI ĐỰNG ĐỒ CÁ NHÂ..." 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
                     <div>
@@ -117,7 +117,7 @@
                 
                 <div class="group cursor-pointer">
                     <div class="bg-gray-100 aspect-[3/4] mb-3 overflow-hidden">
-                        <img src="/images/quan-bo-hot-trend.jpg" alt="QUẦN BÒ HOT TREND..." 
+                        <img src="{{ asset('assets/images/search/5.jpg') }}" alt="QUẦN BÒ HOT TREND..." 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
                     <div>
@@ -134,7 +134,7 @@
                 <!-- Search Result Products -->
                 <div class="group cursor-pointer">
                     <div class="bg-gray-100 aspect-[3/4] mb-3 overflow-hidden">
-                        <img src="/images/ao-phong-soc-hot.jpg" alt="ÁO PHÔNG KẺ SỌC HOT" 
+                        <img src="{{ asset('assets/images/search/6.jpg') }}" alt="ÁO PHÔNG KẺ SỌC HOT" 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
                     <div>
@@ -145,7 +145,7 @@
                 
                 <div class="group cursor-pointer">
                     <div class="bg-gray-100 aspect-[3/4] mb-3 overflow-hidden">
-                        <img src="/images/ao-phong-trang-hoa.jpg" alt="ÁO PHÔNG TRẮNG HOA..." 
+                        <img src="{{ asset('assets/images/search/7.jpg') }}" alt="ÁO PHÔNG TRẮNG HOA..." 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
                     <div>
@@ -156,7 +156,7 @@
                 
                 <div class="group cursor-pointer">
                     <div class="bg-gray-100 aspect-[3/4] mb-3 overflow-hidden">
-                        <img src="/images/ao-phong-bong-da.jpg" alt="ÁO PHÔNG BÓNG ĐÁ..." 
+                        <img src="{{ asset('assets/images/search/8.jpg') }}" alt="ÁO PHÔNG BÓNG ĐÁ..." 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
                     <div>
@@ -167,7 +167,7 @@
                 
                 <div class="group cursor-pointer">
                     <div class="bg-gray-100 aspect-[3/4] mb-3 overflow-hidden">
-                        <img src="/images/ao-phong-thieu-chu.jpg" alt="ÁO PHÔNG THIẾU CHỮ..." 
+                        <img src="{{ asset('assets/images/search/9.jpg') }}" alt="ÁO PHÔNG THIẾU CHỮ..." 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
                     <div>
@@ -178,7 +178,7 @@
                 
                 <div class="group cursor-pointer">
                     <div class="bg-gray-100 aspect-[3/4] mb-3 overflow-hidden">
-                        <img src="/images/ao-phong-xanh-hot.jpg" alt="ÁO PHÔNG XANH HOT..." 
+                        <img src="{{ asset('assets/images/search/10.jpg') }}" alt="ÁO PHÔNG XANH HOT..." 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
                     <div>
