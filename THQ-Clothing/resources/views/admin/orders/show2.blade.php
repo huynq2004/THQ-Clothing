@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Details</title>
+    <title>Order Details Completed</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -71,14 +71,14 @@
             <tr>
                 <td>Tên tài khoản :</td>
                 <td><input type="text" value="cngoc" readonly></td>
-                <td>Trạng thái hiện tại :</td>
-                <td><input type="text" value="Chờ xử lý" readonly></td>
+                <td>Ngày đặt đơn :</td>
+                <td><input type="text" value="23-2-2025" readonly></td>
             </tr>
             <tr>
                 <td>Thông tin người nhận :</td>
                 <td><input type="text" value="số nhà 23, Kiến Thụy, Hải Phòng 0987654321" readonly></td>
-                <td>Ngày đặt đơn :</td>
-                <td><input type="text" value="23-2-2025" readonly></td>
+                <td>Ngày hoàn thành :</td>
+                <td><input type="text" value="25-2-2025" readonly></td>
             </tr>
         </table>
         <table class="product-info-table">
