@@ -46,8 +46,8 @@
             background-color: #f9f9f9;
         }
         .exit-button {
-            text-align: center;
-            padding: 10px 0;
+            text-align: right; /* Đặt nút sang góc phải */
+            margin-top: 10px; /* Khoảng cách từ nội dung phía trên */
         }
         .exit-button button {
             padding: 10px 20px;
